@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Item</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Add a New Item</h1>
+  </header>
+
+  <main>
+    <form action="/add-item" method="POST" style="max-width: 400px; margin: 0 auto;">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+      
+      <label for="description">Description:</label>
+      <textarea name="description" id="description" required style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
+      
+      <label for="availableUntil">Available Until:</label>
+      <input type="date" name="availableUntil" id="availableUntil" style="width: 100%; padding: 10px; margin-bottom: 20px; border-radius: 5px; border: 1px solid #ccc;">
+      
+      <div class="button-container">
+        <button type="submit" class="button button-primary">Add Item</button>
+        <a href="/" class="button">Cancel</a>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

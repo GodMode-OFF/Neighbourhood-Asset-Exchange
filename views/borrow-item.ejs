@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Borrow Item</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Borrow Item</h1>
+  </header>
+
+  <main>
+    <h2><%= item.name %></h2>
+    <p><%= item.description %></p>
+    <p>Available until: <%= item.availableUntil ? item.availableUntil.toDateString() : 'N/A' %></p>
+
+    <!-- Show message if item has been borrowed or if not available -->
+    <% if (typeof message !== 'undefined' && message) { %>
+      <div class="message">
+        <p><%= message %></p>
+      </div>
+    <% } %>
+
+    <!-- Button to return to home page -->
+    <div class="button-container">
+      <a href="/" class="button">Back to Home</a>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neighborhood Asset Exchange</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Neighborhood Asset Exchange</h1>
+  </header>
+
+  <main>
+    <ul>
+      <% items.forEach(item => { %>
+        <li>
+          <strong><%= item.name %></strong> - <%= item.description %><br>
+          <small>Available until: <%= item.availableUntil ? item.availableUntil.toDateString() : 'N/A' %></small><br>
+          <div class="button-container">
+            <!-- Delete Button -->
+            <form action="/delete-item/<%= item._id %>" method="POST" style="display: inline;">
+              <button type="submit" class="button button-primary">Delete</button>
+            </form>
+            <!-- Borrow Button -->
+            <a href="/borrow-item/<%= item._id %>" class="button">Borrow</a>
+          </div>
+        </li>
+      <% }) %>
+    </ul>
+    
+    <div class="button-container">
+      <!-- Add Item Button -->
+      <a href="/add-item" class="button">Add a New Item</a>
+    </div>
+  </main>
+</body>
+</html>
